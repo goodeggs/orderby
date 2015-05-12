@@ -1,6 +1,6 @@
 # orderBy
 
-simple angular orderBy implementation for the server
+Sort collections by fields and getters. Inspired by Angular's orderBy filter
 
 [![build status][travis-badge]][travis-link]
 [![npm version][npm-badge]][npm-link]
@@ -15,7 +15,33 @@ npm install orderby
 ```
 
 ```js
-var orderby = require('orderby');
+var orderBy = require('orderby');
+
+var collection = [
+  {age: 100 , name: 'Michael'}
+  {age: 25 , name: 'Ben'}
+  {age: 100, name: 'Danny'}
+  {age: 25, name: 'Max'}
+];
+
+// sort by fields
+orderBy(collection, ['age', 'name']);
+
+// sort by getters
+orderBy(collection, [function(person){ return person.name.length }]);
+
+// reverse each sort individually
+orderBy(collection, [
+  {
+    predicate: function(person){ return person.name.length },
+    reverse: true
+  },
+  {
+    predicate: 'age',
+    reverse: false
+  }
+]);
+
 ```
 
 ## Contributing

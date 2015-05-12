@@ -1,14 +1,14 @@
 {
   "name": "orderby",
   "version": "1.0.0",
-  "description": "simple angular orderBy implementation for the server",
+  "description": "Sort collections by fields and getters. Inspired by angular orderBy",
   "author": "Good Eggs <open-source@goodeggs.com>",
   "contributors": [
     "dannynelson <danny@goodeggs.com>"
   ],
   "license": "MIT",
   "keywords": [
-    "orderBy sort"
+    "orderBy sort angular"
   ],
   "main": "lib/index.js",
   "repository": {
